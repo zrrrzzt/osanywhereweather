@@ -1,0 +1,35 @@
+{
+  "name": "osanywhereweather",
+  "description": "Get your weatherdata from osanywhereweather",
+  "version": "1.0.0",
+  "author": {
+    "name": "Geir Gåsodden",
+    "email": "geir.gasodden@pythonia.no",
+    "url": "https://github.com/zrrrzzt"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec test/*.js"
+  },
+  "keywords": [
+    "osanywhereweather",
+    "weatherstation",
+    "API"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/zrrrzzt/osanywhereweather.git"
+  },
+  "bugs": {
+    "url": "http://github.com/zrrrzzt/osanywhereweather/issues"
+  },
+  "devDependencies": {
+    "mocha": "^2.1.0"
+  },
+  "dependencies": {
+    "request": "^2.51.0"
+  }
+}
