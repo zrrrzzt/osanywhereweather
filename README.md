@@ -2,6 +2,8 @@
 
 Node module for getting your weatherdata from [osanywhereweather](http://www.osanywhereweather.com/)
 
+This version only supports viewing the live data from your weatherstation.
+
 ##Installation
 
 From npm:
@@ -29,6 +31,26 @@ $npm install
 ```
 
 ##Usage
+
+The module exposes two methods: login and getLiveData.
+
+###login
+Use this to retrieve a sessionKey. Pass in an options object.
+
+**email** the email for your osanywhereweather account
+
+**password** the password for your osanywhereweather account
+
+This method returns a data object.
+
+###getLiveData
+Use this to retrieve live data from your weatherstation. Pass in an options object.
+
+**sessionKey** the sessionKey returned from login
+
+**stationId** the Id for the weatherstation you will get data from. It's the mac address for the station.
+
+This method returns your weatherdata as json.
 
 ```
 'use strict';
