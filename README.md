@@ -1,6 +1,32 @@
-#osanywhereweather
+#osanywhereweather [![Build Status](https://travis-ci.org/zrrrzzt/osanywhereweather.svg?branch=master)](https://travis-ci.org/zrrrzzt/osanywhereweather)
 
 Node module for getting your weatherdata from [osanywhereweather](http://www.osanywhereweather.com/)
+
+##Installation
+
+From npm:
+
+```
+$ npm install osanywhereweather
+```
+
+From GitHub:
+
+```
+$ git@github.com:zrrrzzt/osanywhereweather.git
+```
+
+cd into directory
+
+```
+$ cd osanywhereweather
+```
+
+install dependencies
+
+```
+$npm install
+```
 
 ##Usage
 
@@ -28,6 +54,28 @@ osa.login(opts, function(error, data){
     })
   }
 });
+```
+
+Example of returned data:
+
+```
+{ status: 200,
+  process_time: 108.85095596313477,
+  live:
+   { wind_speed: 3.4,
+     rainfall: '--',
+     temperature: 0.5,
+     low_battery: {},
+     wind_direction: 'E',
+     uv: '--',
+     wind_angle: 90,
+     forecast: 1,
+     pressure: 952,
+     local_time: '2015-01-03 12:24:23.288075',
+     sealevel_pressure: 996.352,
+     humidity: 61,
+     wind_gust: 3.2 }
+}
 ```
 
 ##Disclaimer
