@@ -1,8 +1,7 @@
 'use strict';
 
-var login = require('./lib/login')
-  , getLiveData = require('./lib/getlivedata')
-  ;
+var login = require('./lib/login');
+var getLiveData = require('./lib/getlivedata');
 
 module.exports.login = login;
 
