@@ -55,13 +55,12 @@ This method returns your weatherdata as json.
 ```
 'use strict';
 
-var osa = require('osanywhereweather')
-  , opts = {
-      "stationId": "your-station-id",
-      "email": "your-email@example.com",
-      "password": "YourTopSecretPassword"
-    }
-  ;
+var osa = require('osanywhereweather');
+var opts = {
+  'stationId': 'your-station-id',
+  'email': 'your-email@example.com',
+  'password': 'YourTopSecretPassword'
+};
 
 osa.login(opts, function(error, data){
   if(error){
@@ -73,7 +72,7 @@ osa.login(opts, function(error, data){
       } else {
         console.log(json);
       }
-    })
+    });
   }
 });
 ```
