@@ -1,10 +1,10 @@
-#osanywhereweather [![Build Status](https://travis-ci.org/zrrrzzt/osanywhereweather.svg?branch=master)](https://travis-ci.org/zrrrzzt/osanywhereweather)
+# osanywhereweather [![Build Status](https://travis-ci.org/zrrrzzt/osanywhereweather.svg?branch=master)](https://travis-ci.org/zrrrzzt/osanywhereweather)
 
 Node module for getting your weatherdata from [osanywhereweather](http://www.osanywhereweather.com/)
 
 This version only supports viewing the live data from your weatherstation.
 
-##Installation
+## Installation
 
 From npm:
 
@@ -30,11 +30,11 @@ install dependencies
 $npm install
 ```
 
-##Usage
+## Usage
 
 The module exposes two methods: login and getLiveData.
 
-###login
+### login
 Use this to retrieve a sessionKey. Pass in an options object.
 
 **email** the email for your osanywhereweather account
@@ -43,7 +43,7 @@ Use this to retrieve a sessionKey. Pass in an options object.
 
 This method returns a data object.
 
-###getLiveData
+### getLiveData
 Use this to retrieve live data from your weatherstation. Pass in an options object.
 
 **sessionKey** the sessionKey returned from login
@@ -99,6 +99,6 @@ Example of returned data:
 }
 ```
 
-##Disclaimer
+## Disclaimer
 
 This is not an official API from Oregon Scientific.
