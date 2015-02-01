@@ -1,7 +1,7 @@
 {
   "name": "osanywhereweather",
   "description": "Get your weatherdata from osanywhereweather",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": {
     "name": "Geir Gåsodden",
     "email": "geir.gasodden@pythonia.no",
