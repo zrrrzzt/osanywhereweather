@@ -27,6 +27,7 @@
     "url": "http://github.com/zrrrzzt/osanywhereweather/issues"
   },
   "devDependencies": {
+    "jscs": "^1.10.0",
     "mocha": "^2.1.0"
   },
   "dependencies": {
