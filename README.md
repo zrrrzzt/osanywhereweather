@@ -132,7 +132,7 @@ osa.login(opts, function(error, data){
     console.error(error);
   } else {
     opts.sessionKey = data.sessionKey;
-    osa.getLiveData(opts, function(err, json){
+    osa.getHistoryData(opts, function(err, json){
       if(err){
         console.error(err);
       } else {
