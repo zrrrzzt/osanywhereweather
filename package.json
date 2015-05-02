@@ -1,12 +1,18 @@
 {
   "name": "osanywhereweather",
   "description": "Get your weatherdata from osanywhereweather",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": {
     "name": "Geir Gåsodden",
     "email": "geir.gasodden@pythonia.no",
     "url": "https://github.com/zrrrzzt"
   },
+  "contributors": [
+    {
+      "name": "Alexandre Souleau",
+      "url": "https://github.com/mrsheepsheep"
+    }
+  ],
   "main": "index.js",
   "engines": {
     "node": ">=0.12.0"

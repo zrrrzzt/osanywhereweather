@@ -106,7 +106,7 @@ Use this to retrieve historic data from your weatherstation. Pass in an options 
 
 **stationId** the Id for the weatherstation you will get data from. It's the mac address for the station.
 
-**type** type of historic data like temperature, humidity, pressure, uv and rain
+**type** type of historic data like temperature, humidity, pressure, uv, wind and rain
 
 **channel** channel number
 
