@@ -1,4 +1,5 @@
-# osanywhereweather [![Build Status](https://travis-ci.org/zrrrzzt/osanywhereweather.svg?branch=master)](https://travis-ci.org/zrrrzzt/osanywhereweather)
+[![Build Status](https://travis-ci.org/zrrrzzt/osanywhereweather.svg?branch=master)](https://travis-ci.org/zrrrzzt/osanywhereweather)
+# osanywhereweather
 
 Node module for getting your weatherdata from [osanywhereweather](http://www.osanywhereweather.com/)
 
@@ -8,31 +9,31 @@ This version supports viewing the live data from your weatherstation as well as 
 
 From npm:
 
-```
+```sh
 $ npm install osanywhereweather
 ```
 
 From GitHub:
 
-```
+```sh
 $ git@github.com:zrrrzzt/osanywhereweather.git
 ```
 
 cd into directory
 
-```
+```sh
 $ cd osanywhereweather
 ```
 
 install dependencies
 
-```
+```sh
 $npm install
 ```
 
 ## Usage
 
-The module exposes three methods: login, getLiveData and getHistoryData.
+The module exposes four methods: login, getLiveData, getHistoryData and exportData.
 
 ### login
 Use this to retrieve a sessionKey. Pass in an options object.
@@ -52,7 +53,7 @@ Use this to retrieve live data from your weatherstation. Pass in an options obje
 
 This method returns your weatherdata as json.
 
-```
+```javascript
 'use strict';
 
 var osa = require('osanywhereweather');
@@ -79,7 +80,7 @@ osa.login(opts, function(error, data){
 
 Example of returned data:
 
-```
+```javascript
 { status: 200,
   process_time: 108.85095596313477,
   live:
@@ -114,7 +115,7 @@ Use this to retrieve historic data from your weatherstation. Pass in an options 
 
 This method returns your weatherdata as json.
 
-```
+```javascript
 'use strict';
 
 var osa = require('osanywhereweather');
@@ -145,7 +146,7 @@ osa.login(opts, function(error, data){
 
 Example of returned data:
 
-```
+```javascript
 { status: 200,
   live: '--',
   points: 
@@ -204,7 +205,7 @@ Use this to export historic data from your weatherstation. Pass in an options ob
 
 This method returns your weatherdata as csv.
 
-```
+```javascript
 'use strict';
 
 var osa = require('osanywhereweather');
@@ -236,7 +237,7 @@ osa.login(opts, function(error, data){
 
 Example of returned data:
 
-```
+```sh
 All data are in 5 minute block.,,,
 utc,date,time,temperature (C)
 2015-03-31T22:00:00,2015-04-01,00:00,-0.6
