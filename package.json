@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "jscs": "^1.13.1",
-    "mocha": "^2.2.4"
+    "mocha": "^2.2.5"
   },
   "dependencies": {
     "request": "^2.55.0"
