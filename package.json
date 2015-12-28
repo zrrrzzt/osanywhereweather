@@ -32,9 +32,6 @@
   "bugs": {
     "url": "http://github.com/zrrrzzt/osanywhereweather/issues"
   },
-  "devDependencies": {
-    "mocha": "^2.2.5"
-  },
   "dependencies": {
     "request": "^2.55.0"
   }
