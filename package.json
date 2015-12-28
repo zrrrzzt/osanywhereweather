@@ -34,5 +34,8 @@
   },
   "dependencies": {
     "request": "^2.55.0"
+  },
+  "devDependencies": {
+    "standard": "^5.4.1"
   }
 }
