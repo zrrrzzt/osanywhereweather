@@ -1,99 +1,49 @@
 'use strict'
 
-var assert = require('assert')
+var tap = require('tap')
 var createHash = require('../lib/makehash')
 
-describe('createHash - inputs', function () {
-  it('requires an opts object', function (done) {
-    var opts = false
-
-    createHash(opts, function (err, data) {
-      assert.throws(function () {
-        if (err) {
-          throw err
-        } else {
-          console.log(data)
-        }
-      }, function(err) {
-        if ((err instanceof Error) && /Missing required input: options/.test(err)) {
-          return true
-        }
-      },
-        'Unexpected error'
-      )
-      done()
-    })
+tap.test('requires an options object', function (test) {
+  var options = false
+  var expectedErrorMessage = 'Missing required input: options'
+  createHash(options, function (error, data) {
+    tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
+    test.done()
   })
+})
 
-  it('requires opts.email to exist', function (done) {
-    var opts = {
-      email: false
-    }
-
-    createHash(opts, function (err, data) {
-      assert.throws(function () {
-        if (err) {
-          throw err
-        } else {
-          console.log(data)
-        }
-      }, function (err) {
-        if ((err instanceof Error) && /Missing required param: options.email/.test(err)) {
-          return true
-        }
-      },
-        'Unexpected error'
-      )
-      done()
-    })
+tap.test('requires options.email to exist', function (test) {
+  var options = {
+    email: false
+  }
+  var expectedErrorMessage = 'Missing required param: options.email'
+  createHash(options, function (error, data) {
+    tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
+    test.done()
   })
+})
 
-  it('requires opts.password to exist', function (done) {
-    var opts = {
-      email: true,
-      password: false
-    }
-
-    createHash(opts, function (err, data) {
-      assert.throws(function () {
-        if (err) {
-          throw err
-        } else {
-          console.log(data)
-        }
-      }, function (err) {
-        if ((err instanceof Error) && /Missing required param: options.password/.test(err)) {
-          return true
-        }
-      },
-        'Unexpected error'
-      )
-      done()
-    })
+tap.test('requires options.password to exist', function (test) {
+  var options = {
+    email: true,
+    password: false
+  }
+  var expectedErrorMessage = 'Missing required param: options.password'
+  createHash(options, function (error, data) {
+    tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
+    test.done()
   })
+})
 
-  it('requires opts.challenge to exist', function (done) {
-    var opts = {
-      email: true,
-      password: true,
-      challenge: false
-    }
-
-    createHash(opts, function (err, data) {
-      assert.throws(function () {
-        if (err) {
-          throw err
-        } else {
-          console.log(data)
-        }
-      }, function (err) {
-        if ((err instanceof Error) && /Missing required param: options.challenge/.test(err)) {
-          return true
-        }
-      },
-        'Unexpected error'
-      )
-      done()
-    })
+tap.test('requires opts.challenge to exist', function (test) {
+  var options = {
+    email: true,
+    password: true,
+    challenge: false
+  }
+  var expectedErrorMessage = 'Missing required param: options.challenge'
+  createHash(options, function (error, data) {
+    tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
+    test.done()
   })
 })

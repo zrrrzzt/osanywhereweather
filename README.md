@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/zrrrzzt/osanywhereweather.svg?branch=master)](https://travis-ci.org/zrrrzzt/osanywhereweather)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 # osanywhereweather
 
 Node module for getting your weatherdata from [osanywhereweather](http://www.osanywhereweather.com/)
@@ -54,28 +55,28 @@ Use this to retrieve live data from your weatherstation. Pass in an options obje
 This method returns your weatherdata as json.
 
 ```javascript
-'use strict';
+'use strict'
 
-var osa = require('osanywhereweather');
-var opts = {
+var osa = require('osanywhereweather')
+var options = {
   'stationId': 'your-station-id',
   'email': 'your-email@example.com',
   'password': 'YourTopSecretPassword'
-};
+}
 
-osa.login(opts, function(error, data){
-  if(error){
-    console.error(error);
+osa.login(options, function (error, data) {
+  if (error) {
+    console.error(error)
   } else {
-    osa.getLiveData({stationId:opts.stationId, sessionKey:data.sessionKey}, function(err, json){
-      if(err){
-        console.error(err);
+    osa.getLiveData({stationId: options.stationId, sessionKey: data.sessionKey}, function (err, json) {
+      if (err) {
+        console.error(err)
       } else {
-        console.log(json);
+        console.log(json)
       }
-    });
+    })
   }
-});
+})
 ````
 
 Example of returned data:
@@ -116,32 +117,32 @@ Use this to retrieve historic data from your weatherstation. Pass in an options 
 This method returns your weatherdata as json.
 
 ```javascript
-'use strict';
+'use strict'
 
-var osa = require('osanywhereweather');
-var opts = {
+var osa = require('osanywhereweather')
+var options = {
   'stationId': 'your-station-id',
   'email': 'your-email@example.com',
   'password': 'YourTopSecretPassword',
   'type': 'temperature',
   'channel': '1',
   'duration': '@week'
-};
+}
 
-osa.login(opts, function(error, data){
-  if(error){
-    console.error(error);
+osa.login(options, function (error, data) {
+  if (error) {
+    console.error(error)
   } else {
-    opts.sessionKey = data.sessionKey;
-    osa.getHistoryData(opts, function(err, json){
-      if(err){
-        console.error(err);
+    options.sessionKey = data.sessionKey
+    osa.getHistoryData(options, function (err, json){
+      if (err) {
+        console.error(err)
       } else {
-        console.log(json);
+        console.log(json)
       }
-    });
+    })
   }
-});
+})
 ```
 
 Example of returned data:
@@ -206,10 +207,10 @@ Use this to export historic data from your weatherstation. Pass in an options ob
 This method returns your weatherdata as csv.
 
 ```javascript
-'use strict';
+'use strict'
 
-var osa = require('osanywhereweather');
-var opts = {
+var osa = require('osanywhereweather')
+var options = {
   'stationId': 'your-station-id',
   'email': 'your-email@example.com',
   'password': 'YourTopSecretPassword',
@@ -217,22 +218,22 @@ var opts = {
   'channel': '1',
   'fromdate': '2015-04-01',
   'todate': '2015-04-30'
-};
+}
 
-osa.login(opts, function(error, data){
-  if(error){
-    console.error(error);
+osa.login(options, function (error, data) {
+  if (error) {
+    console.error(error)
   } else {
-    opts.sessionKey = data.sessionKey;
-    osa.exportData(opts, function(err, data){
-      if(err){
-        console.error(err);
+    options.sessionKey = data.sessionKey
+    osa.exportData(options, function (err, data) {
+      if (err) {
+        console.error(err)
       } else {
-        console.log(data);
+        console.log(data)
       }
-    });
+    })
   }
-});
+})
 ```
 
 Example of returned data:
