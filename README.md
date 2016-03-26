@@ -828,6 +828,30 @@ utc,date,time,temperature (C)
 2015-04-26T22:00:00,2015-04-27,00:00,-3.2
 ```
 
+## Docker
+To run this module as a service use the docker image.
+
+Change the ENV parts of the [Dockerfile](Dockerfile) or use [docker.env](docker.env)
+
+Build
+```sh
+$ docker build -t osanywhereweather .
+```
+
+Run a container
+
+```sh
+$ docker run --rm osanywhereweather 
+```
+
+or
+
+```sh
+$ docker run --env-file=docker.env --rm osanywhereweather 
+```
+
+This will spin up a container. Do the job. Shut it down and remove it.
+
 ## Disclaimer
 
 This is not an official API from Oregon Scientific.
