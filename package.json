@@ -1,7 +1,7 @@
 {
   "name": "osanywhereweather",
   "description": "Get your weatherdata from osanywhereweather",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "license": "MIT",
   "author": {
     "name": "Geir Gåsodden",

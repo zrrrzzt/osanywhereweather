@@ -29,7 +29,7 @@ $ cd osanywhereweather
 install dependencies
 
 ```sh
-$npm install
+$ npm run setup
 ```
 
 ## Usage
