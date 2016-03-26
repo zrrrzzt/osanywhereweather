@@ -831,6 +831,8 @@ utc,date,time,temperature (C)
 ## Docker
 To run this module as a service use the docker image.
 
+At the moment the docker version only supports getLiveData.
+
 Change the ENV parts of the [Dockerfile](Dockerfile) or use [docker.env](docker.env)
 
 Build
