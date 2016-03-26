@@ -41,7 +41,7 @@
     "request": "^2.67.0"
   },
   "devDependencies": {
-    "coveralls": "^2.11.6",
+    "coveralls": "2.11.9",
     "standard": "6.0.8",
     "tap": "5.7.0"
   }
