@@ -38,7 +38,7 @@
     "url": "http://github.com/zrrrzzt/osanywhereweather/issues"
   },
   "dependencies": {
-    "request": "2.70.0"
+    "request": "2.71.0"
   },
   "devDependencies": {
     "coveralls": "2.11.9",
