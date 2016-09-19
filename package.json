@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "coveralls": "2.11.13",
-    "standard": "8.0.0",
+    "standard": "8.1.0",
     "tap": "7.1.2"
   }
 }
