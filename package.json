@@ -41,7 +41,7 @@
     "request": "2.75.0"
   },
   "devDependencies": {
-    "coveralls": "2.11.13",
+    "coveralls": "2.11.14",
     "standard": "8.1.0",
     "tap": "7.1.2"
   }
