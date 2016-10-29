@@ -1,7 +1,7 @@
 {
   "name": "osanywhereweather",
   "description": "Get your weatherdata from osanywhereweather",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "license": "MIT",
   "author": {
     "name": "Geir Gåsodden",
@@ -16,7 +16,7 @@
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=0.12.0"
+    "node": ">=4.6.1"
   },
   "scripts": {
     "test": "standard && tap --reporter=spec test/*.js",
