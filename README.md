@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/zrrrzzt/osanywhereweather.svg?branch=master)](https://travis-ci.org/zrrrzzt/osanywhereweather)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+
 # osanywhereweather
 
 Node module for getting your weatherdata from [osanywhereweather](http://www.osanywhereweather.com/)
@@ -29,7 +30,7 @@ $ cd osanywhereweather
 install dependencies
 
 ```sh
-$ npm run setup
+$ npm install
 ```
 
 ## Usage
@@ -37,6 +38,7 @@ $ npm run setup
 The module exposes four methods: login, getLiveData, getHistoryData and exportData.
 
 ### login
+
 Use this to retrieve a sessionKey. Pass in an options object.
 
 **email** the email for your osanywhereweather account
@@ -46,6 +48,7 @@ Use this to retrieve a sessionKey. Pass in an options object.
 This method returns a data object.
 
 ### getLiveData
+
 Use this to retrieve live data from your weatherstation. Pass in an options object.
 
 **sessionKey** the sessionKey returned from login
@@ -54,7 +57,7 @@ Use this to retrieve live data from your weatherstation. Pass in an options obje
 
 This method returns your weatherdata as json.
 
-```javascript
+```JavaScript
 'use strict'
 
 var osa = require('osanywhereweather')
@@ -77,11 +80,11 @@ osa.login(options, function (error, data) {
     })
   }
 })
-````
+```
 
 Example of returned data:
 
-```javascript
+```JavaScript
 { status: 200,
   process_time: 108.85095596313477,
   live:
@@ -102,6 +105,7 @@ Example of returned data:
 ```
 
 ## getHistoryData
+
 Use this to retrieve historic data from your weatherstation. Pass in an options object.
 
 **sessionKey** the sessionKey returned from login
@@ -116,7 +120,7 @@ Use this to retrieve historic data from your weatherstation. Pass in an options 
 
 This method returns your weatherdata as json.
 
-```javascript
+```JavaScript
 'use strict'
 
 var osa = require('osanywhereweather')
@@ -147,7 +151,7 @@ osa.login(options, function (error, data) {
 
 Example of returned data:
 
-```javascript
+```JavaScript
 { status: 200,
   live: '--',
   points: 
@@ -206,7 +210,7 @@ Use this to export historic data from your weatherstation. Pass in an options ob
 
 This method returns your weatherdata as csv.
 
-```javascript
+```JavaScript
 'use strict'
 
 var osa = require('osanywhereweather')
@@ -238,7 +242,7 @@ osa.login(options, function (error, data) {
 
 Example of returned data:
 
-```sh
+```bash
 All data are in 5 minute block.,,,
 utc,date,time,temperature (C)
 2015-03-31T22:00:00,2015-04-01,00:00,-0.6
@@ -836,19 +840,19 @@ At the moment the docker version only supports getLiveData.
 Change the ENV parts of the [Dockerfile](Dockerfile) or use [docker.env](docker.env)
 
 Build
-```sh
+```bash
 $ docker build -t osanywhereweather .
 ```
 
 Run a container
 
-```sh
+```bash
 $ docker run --rm osanywhereweather 
 ```
 
 or
 
-```sh
+```bash
 $ docker run --env-file=docker.env --rm osanywhereweather 
 ```
 
@@ -857,3 +861,9 @@ This will spin up a container. Do the job. Shut it down and remove it.
 ## Disclaimer
 
 This is not an official API from Oregon Scientific.
+
+## License
+
+[MIT](LICENSE)
+
+![osanywhereweather](https://robots.kebabstudios.party/osanywhereweather.png "Robohash image of osanywhereweather")
