@@ -4,8 +4,8 @@
 #
 ###########################################################
 
-# Setting the base to nodejs 4.6.1
-FROM mhart/alpine-node:4.6.1
+# Setting the base to nodejs 4.8.0
+FROM node:4.8.0-alpine
 
 # Maintainer
 MAINTAINER Geir Gåsodden
@@ -23,11 +23,6 @@ WORKDIR "/src"
 
 # Install dependencies
 RUN npm install --production
-
-# Env variables
-ENV STATION_ID yourStationId
-ENV EMAIL youremail@provider.com
-ENV PASSWORD yourTopSecretPassword
 
 # Startup
 ENTRYPOINT node example

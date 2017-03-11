@@ -19,7 +19,8 @@
     "node": ">=4.8.0"
   },
   "scripts": {
-    "test": "standard && tap --reporter=spec test/*.js",
+    "test": "standard && nsp check && tap --reporter=spec test/*.js",
+    "test-offline": "standard && && tap --reporter=spec test/*.js",
     "coverage": "tap test/*.js --coverage",
     "coveralls": "tap --cov --coverage-report=lcov test/*.js && cat coverage/lcov.info | coveralls"
   },
@@ -36,11 +37,13 @@
   "bugs": {
     "url": "http://github.com/zrrrzzt/osanywhereweather/issues"
   },
+  "homepage": "http://github.com/zrrrzzt/osanywhereweather",
   "dependencies": {
     "request": "2.81.0"
   },
   "devDependencies": {
     "coveralls": "2.12.0",
+    "nsp": "2.6.3",
     "standard": "9.0.0",
     "tap": "10.3.0"
   }
