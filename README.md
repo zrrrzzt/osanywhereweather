@@ -866,4 +866,4 @@ This is not an official API from Oregon Scientific.
 
 [MIT](LICENSE)
 
-![osanywhereweather](https://robots.kebabstudios.party/osanywhereweather.png "Robohash image of osanywhereweather")
+![Robohash image of osanywhereweather](https://robots.kebabstudios.party/osanywhereweather.png "Robohash image of osanywhereweather")
