@@ -1,11 +1,14 @@
 'use strict'
 
-var login = require('./lib/login')
-var getLiveData = require('./lib/getlivedata')
-var getHistoryData = require('./lib/gethistorydata')
-var exportData = require('./lib/exportdata')
+const login = require('./lib/login')
+const getCredentials = require('./lib/get-credentials')
+const getLiveData = require('./lib/get-livedata')
+const getHistoryData = require('./lib/gethistorydata')
+const exportData = require('./lib/exportdata')
 
 module.exports.login = login
+
+module.exports.getCredentials = getCredentials
 
 module.exports.getLiveData = getLiveData
 
