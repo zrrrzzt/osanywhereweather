@@ -1,11 +1,11 @@
 'use strict'
 
-var tap = require('tap')
-var getHistoryData = require('../lib/gethistorydata')
+const tap = require('tap')
+const getHistoryData = require('../lib/get-historydata')
 
 tap.test('requires an options object', function (test) {
-  var options = false
-  var expectedErrorMessage = 'Missing required input: options'
+  const options = false
+  const expectedErrorMessage = 'Missing required input: options'
   getHistoryData(options, function (error, data) {
     tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
     test.done()
@@ -13,10 +13,10 @@ tap.test('requires an options object', function (test) {
 })
 
 tap.test('requires options.stationId to exist', function (test) {
-  var options = {
+  const options = {
     stationId: false
   }
-  var expectedErrorMessage = 'Missing required param: options.stationId'
+  const expectedErrorMessage = 'Missing required param: options.stationId'
   getHistoryData(options, function (error, data) {
     tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
     test.done()
@@ -24,11 +24,11 @@ tap.test('requires options.stationId to exist', function (test) {
 })
 
 tap.test('requires options.sessionKey to exist', function (test) {
-  var options = {
+  const options = {
     stationId: true,
     sessionKey: false
   }
-  var expectedErrorMessage = 'Missing required param: options.sessionKey'
+  const expectedErrorMessage = 'Missing required param: options.sessionKey'
   getHistoryData(options, function (error, data) {
     tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
     test.done()
@@ -36,12 +36,12 @@ tap.test('requires options.sessionKey to exist', function (test) {
 })
 
 tap.test('requires options.type to exist', function (test) {
-  var options = {
+  const options = {
     stationId: true,
     sessionKey: true,
     type: false
   }
-  var expectedErrorMessage = 'Missing required param: options.type'
+  const expectedErrorMessage = 'Missing required param: options.type'
   getHistoryData(options, function (error, data) {
     tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
     test.done()
@@ -49,13 +49,13 @@ tap.test('requires options.type to exist', function (test) {
 })
 
 tap.test('requires options.channel to exist', function (test) {
-  var options = {
+  const options = {
     stationId: true,
     sessionKey: true,
     type: true,
     channel: false
   }
-  var expectedErrorMessage = 'Missing required param: options.channel'
+  const expectedErrorMessage = 'Missing required param: options.channel'
   getHistoryData(options, function (error, data) {
     tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
     test.done()
@@ -63,14 +63,14 @@ tap.test('requires options.channel to exist', function (test) {
 })
 
 tap.test('requires options.duration to exist', function (test) {
-  var options = {
+  const options = {
     stationId: true,
     sessionKey: true,
     type: true,
     channel: true,
     duration: false
   }
-  var expectedErrorMessage = 'Missing required param: options.duration'
+  const expectedErrorMessage = 'Missing required param: options.duration'
   getHistoryData(options, function (error, data) {
     tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
     test.done()

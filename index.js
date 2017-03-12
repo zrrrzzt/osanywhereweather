@@ -3,7 +3,7 @@
 const login = require('./lib/login')
 const getCredentials = require('./lib/get-credentials')
 const getLiveData = require('./lib/get-livedata')
-const getHistoryData = require('./lib/gethistorydata')
+const getHistoryData = require('./lib/get-historydata')
 const exportData = require('./lib/exportdata')
 
 module.exports.login = login

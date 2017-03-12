@@ -9,28 +9,8 @@ This version supports viewing the live data from your weatherstation as well as 
 
 ## Installation
 
-From npm:
-
-```sh
-$ npm install osanywhereweather
-```
-
-From GitHub:
-
-```sh
-$ git@github.com:zrrrzzt/osanywhereweather.git
-```
-
-cd into directory
-
-```sh
-$ cd osanywhereweather
-```
-
-install dependencies
-
-```sh
-$ npm install
+```bash
+$ npm install osanywhereweather --save
 ```
 
 ## Usage
