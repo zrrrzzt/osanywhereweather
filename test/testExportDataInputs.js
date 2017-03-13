@@ -1,7 +1,7 @@
 'use strict'
 
 var tap = require('tap')
-var exportData = require('../lib/exportdata')
+var exportData = require('../lib/export-data')
 
 tap.test('requires an options object', function (test) {
   var options = false
