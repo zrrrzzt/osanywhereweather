@@ -1,17 +1,33 @@
 'use strict'
 
-const login = require('./lib/login')
 const getCredentials = require('./lib/get-credentials')
 const getLiveData = require('./lib/get-livedata')
 const getHistoryData = require('./lib/get-historydata')
 const exportData = require('./lib/export-data')
 
-module.exports.login = login
+module.exports.live = (options, callback) => {
+  return new Promise((resolve, reject) => {
+    getCredentials(options)
+      .then(getLiveData)
+      .then(json => callback ? callback(null, json) : resolve(json))
+      .catch(error => callback ? callback(error, null) : reject(error))
+  })
+}
 
-module.exports.getCredentials = getCredentials
+module.exports.history = (options, callback) => {
+  return new Promise((resolve, reject) => {
+    getCredentials(options)
+      .then(getHistoryData)
+      .then(json => callback ? callback(null, json) : resolve(json))
+      .catch(error => callback ? callback(error, null) : reject(error))
+  })
+}
 
-module.exports.getLiveData = getLiveData
-
-module.exports.getHistoryData = getHistoryData
-
-module.exports.exportData = exportData
+module.exports.export = (options, callback) => {
+  return new Promise((resolve, reject) => {
+    getCredentials(options)
+      .then(exportData)
+      .then(data => callback ? callback(null, data) : resolve(data))
+      .catch(error => callback ? callback(error, null) : reject(error))
+  })
+}

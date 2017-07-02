@@ -10,59 +10,65 @@ This version supports viewing the live data from your weatherstation as well as 
 ## Installation
 
 ```bash
-$ npm install osanywhereweather --save
+$ npm i osanywhereweather --save
 ```
 
 ## Usage
 
-The module exposes four methods: login, getLiveData, getHistoryData and exportData.
+The module exposes three methods: live, history, and export.
+All methods supports promises and callbacks.
 
-### login
+### live
 
-Use this to retrieve a sessionKey. Pass in an options object.
+Use this to retrieve live data from your weatherstation. Pass in an options object.
 
 **email** the email for your osanywhereweather account
 
 **password** the password for your osanywhereweather account
 
-This method returns a data object.
-
-### getLiveData
-
-Use this to retrieve live data from your weatherstation. Pass in an options object.
-
-**sessionKey** the sessionKey returned from login
-
 **stationId** the Id for the weatherstation you will get data from. It's the mac address for the station.
 
 This method returns your weatherdata as json.
 
+#### Promises
+
 ```JavaScript
 'use strict'
 
-var osa = require('osanywhereweather')
-var options = {
+const osa = require('osanywhereweather')
+const options = {
   'stationId': 'your-station-id',
   'email': 'your-email@example.com',
   'password': 'YourTopSecretPassword'
 }
 
-osa.login(options, function (error, data) {
+osa.live(options)
+  .then(json => console.log(json))
+  .catch(error => console.error(error))
+```
+
+#### Callback
+
+```JavaScript
+'use strict'
+
+const osa = require('osanywhereweather')
+const options = {
+  'stationId': 'your-station-id',
+  'email': 'your-email@example.com',
+  'password': 'YourTopSecretPassword'
+}
+
+osa.live(options, (error, json) => {
   if (error) {
     console.error(error)
   } else {
-    osa.getLiveData({stationId: options.stationId, sessionKey: data.sessionKey}, function (err, json) {
-      if (err) {
-        console.error(err)
-      } else {
-        console.log(json)
-      }
-    })
+    console.log(json)
   }
 })
 ```
 
-Example of returned data:
+#### Example of returned data for live
 
 ```JavaScript
 { status: 200,
@@ -84,11 +90,13 @@ Example of returned data:
 }
 ```
 
-## getHistoryData
+### history
 
 Use this to retrieve historic data from your weatherstation. Pass in an options object.
 
-**sessionKey** the sessionKey returned from login
+**email** the email for your osanywhereweather account
+
+**password** the password for your osanywhereweather account
 
 **stationId** the Id for the weatherstation you will get data from. It's the mac address for the station.
 
@@ -100,11 +108,13 @@ Use this to retrieve historic data from your weatherstation. Pass in an options 
 
 This method returns your weatherdata as json.
 
+#### Promises
+
 ```JavaScript
 'use strict'
 
-var osa = require('osanywhereweather')
-var options = {
+const osa = require('osanywhereweather')
+const options = {
   'stationId': 'your-station-id',
   'email': 'your-email@example.com',
   'password': 'YourTopSecretPassword',
@@ -113,23 +123,36 @@ var options = {
   'duration': '@week'
 }
 
-osa.login(options, function (error, data) {
+osa.history(options)
+  .then(json => console.log(json))
+  .catch(error => console.error(error))
+```
+
+#### Callback
+
+```JavaScript
+'use strict'
+
+const osa = require('osanywhereweather')
+const options = {
+  'stationId': 'your-station-id',
+  'email': 'your-email@example.com',
+  'password': 'YourTopSecretPassword',
+  'type': 'temperature',
+  'channel': '1',
+  'duration': '@week'
+}
+
+osa.history(options, (error, json) => {
   if (error) {
     console.error(error)
   } else {
-    options.sessionKey = data.sessionKey
-    osa.getHistoryData(options, function (err, json){
-      if (err) {
-        console.error(err)
-      } else {
-        console.log(json)
-      }
-    })
+    console.log(json)
   }
 })
 ```
 
-Example of returned data:
+#### Example of returned data for history
 
 ```JavaScript
 { status: 200,
@@ -173,10 +196,12 @@ Example of returned data:
 }
 ```
 
-## exportData
+### export
 Use this to export historic data from your weatherstation. Pass in an options object.
 
-**sessionKey** the sessionKey returned from login
+**email** the email for your osanywhereweather account
+
+**password** the password for your osanywhereweather account
 
 **stationId** the Id for the weatherstation you will get data from. It's the mac address for the station.
 
@@ -190,11 +215,13 @@ Use this to export historic data from your weatherstation. Pass in an options ob
 
 This method returns your weatherdata as csv.
 
+#### Promises
+
 ```JavaScript
 'use strict'
 
-var osa = require('osanywhereweather')
-var options = {
+const osa = require('osanywhereweather')
+const options = {
   'stationId': 'your-station-id',
   'email': 'your-email@example.com',
   'password': 'YourTopSecretPassword',
@@ -204,23 +231,37 @@ var options = {
   'todate': '2015-04-30'
 }
 
-osa.login(options, function (error, data) {
+osa.export(options)
+  .then(data => console.log(data))
+  .catch(error => console.error(error))
+```
+
+#### Callback
+
+```JavaScript
+'use strict'
+
+const osa = require('osanywhereweather')
+const options = {
+  'stationId': 'your-station-id',
+  'email': 'your-email@example.com',
+  'password': 'YourTopSecretPassword',
+  'type': 'temperature',
+  'channel': '1',
+  'fromdate': '2015-04-01',
+  'todate': '2015-04-30'
+}
+
+osa.export(options, (error, data) => {
   if (error) {
     console.error(error)
   } else {
-    options.sessionKey = data.sessionKey
-    osa.exportData(options, function (err, data) {
-      if (err) {
-        console.error(err)
-      } else {
-        console.log(data)
-      }
-    })
+    console.log(data)
   }
 })
 ```
 
-Example of returned data:
+#### Example of returned data for export
 
 ```bash
 All data are in 5 minute block.,,,
