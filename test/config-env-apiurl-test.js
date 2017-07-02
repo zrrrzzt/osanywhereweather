@@ -1,8 +1,8 @@
 'use strict'
 
-var tap = require('tap')
-var testUrl = 'iamok'
+const tap = require('tap')
+const testUrl = 'iamok'
 process.env.API_URL = testUrl
-var config = require('../config')
+const config = require('../config')
 
-tap.equal(config.API_URL, testUrl, 'It supports API_URL thorugh env')
+tap.equal(config.API_URL, testUrl, 'It supports API_URL through env')
