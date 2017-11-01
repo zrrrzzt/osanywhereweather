@@ -40,7 +40,7 @@
   },
   "homepage": "http://github.com/zrrrzzt/osanywhereweather",
   "dependencies": {
-    "request": "2.82.0"
+    "request": "2.83.0"
   },
   "devDependencies": {
     "coveralls": "2.13.1",
