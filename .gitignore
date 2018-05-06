@@ -1,5 +1,6 @@
-# WebStorm
+# IDE
 .idea
+.vscode
 
 # OS X
 .DS_Store
@@ -33,3 +34,9 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+# Env
+.env
+
+# Lock
+package-lock.json
