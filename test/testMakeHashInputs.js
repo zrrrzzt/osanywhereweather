@@ -7,7 +7,7 @@ tap.throws(
   function () {
     createHash()
   },
-  {message: 'Missing required input: options'},
+  { message: 'Missing required input: options' },
   'requires an options object'
 )
 
@@ -17,7 +17,7 @@ tap.throws(
       email: false
     })
   },
-  {message: 'Missing required param: options.email'},
+  { message: 'Missing required param: options.email' },
   'requires options.email to exist'
 )
 
@@ -28,7 +28,7 @@ tap.throws(
       password: false
     })
   },
-  {message: 'Missing required param: options.password'},
+  { message: 'Missing required param: options.password' },
   'requires options.password to exist'
 )
 
@@ -40,6 +40,6 @@ tap.throws(
       challenge: false
     })
   },
-  {message: 'Missing required param: options.challenge'},
+  { message: 'Missing required param: options.challenge' },
   'requires options.challenge to exist'
 )
